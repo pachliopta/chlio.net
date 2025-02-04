@@ -8,6 +8,9 @@
     "start": "exec eleventy --serve --incremental",
     "build": "exec eleventy"
   },
+  "engines": {
+    "node": "21.7.3"
+  },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
