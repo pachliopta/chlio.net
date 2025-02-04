@@ -81,6 +81,10 @@ a {
   font-size: 1.5rem;
 }
 
+.align-mid {
+  text-align: center;
+}
+
 /* misc */
 .header {
   width: 100%;
@@ -95,6 +99,28 @@ a {
     @media (max-width: 720px) {
       width: 100%;
       height: unset;
+    }
+  }
+
+  .header-image {
+    width: 720px;
+    height: 256px;
+    margin: auto;
+
+    background-image: url("/assets/images/butterfly-plussed.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+
+    &:hover {
+      background-image: url("/assets/images/butterfly-flinched.png")
+    }
+
+    @media (max-width: 720px) {
+      width: 100%;
+      height: unset;
+      min-height: 128px;
     }
   }
 }
@@ -135,4 +161,15 @@ a {
 .logentry {
   padding: 2rem 1rem;
 
+}
+
+.about-repeat {
+  width: 100%;
+  height: 640px;
+  background-image: url("/assets/images/butterfly-pipe.png");
+  image-rendering: pixelated;
+
+  &:hover {
+    background-image: url("/assets/images/butterfly-flinched.png")
+  }
 }

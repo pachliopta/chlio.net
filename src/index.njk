@@ -1,7 +1,7 @@
 ---
 title: chlio's website
 eleventyImport:
-    collections: ["log"]
+    collections: ["status"]
 ---
 
 {% extends "default.njk" %}
@@ -18,14 +18,14 @@ eleventyImport:
             </a>
         </div>
         <div class="section">
-            <h3>log</h3>
-            {%- for post in collections.log -%}
+            <h3>status</h3>
+            {%- for post in collections.status -%}
                 <span>{{ post.content | safe }}</span>
                 <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
             {%- endfor -%}
-            <a href="/log">
+            <a href="/status">
                 <p>
-                    more logs <span aria-hidden="true">>></span>
+                    more statuses <span aria-hidden="true">>></span>
                 </p>
             </a>
         </div>
