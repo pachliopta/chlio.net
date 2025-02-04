@@ -1,0 +1,17 @@
+---
+title: log
+permalink: /log/index.html
+eleventyImport:
+    collections: ["log"]
+---
+
+{% extends "default.njk" %}
+{% block content %}
+    <div class="container">
+        <h3>log</h3>
+        {%- for post in collections.log -%}
+            <span>{{ post.content | safe }}</span>
+            <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
+        {%- endfor -%}
+    </div>
+{% endblock content %}

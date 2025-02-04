@@ -1,0 +1,31 @@
+{% include "comment.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="robots" content="noindex, nofollow" />
+        {% include "meta.njk" %}
+        {% block head %}
+            <title>{{ title }}</title>
+        {% endblock head %}
+    </head>
+    <body>
+        <div class="viewport">
+            <div class="">
+                {% include "header.njk" %}
+                <main class="main">
+                    <div class="container logentry">
+                        {{ content | safe }}
+                        <div>
+                            <span class="subscript color-secondary">{{ date }}</span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="footer container">
+                <h5>site updated @ {% build_time %}</h5>
+            </div>
+        </div>
+    </body>
+</html>

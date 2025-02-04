@@ -1,0 +1,33 @@
+---
+title: chlio's website
+eleventyImport:
+    collections: ["log"]
+---
+
+{% extends "default.njk" %}
+{% block content %}
+    <div class="container">
+        <div class="separator" aria-hidden="true"></div>
+        <p>Welcome to chlio.net</p>
+        <div class="section">
+            <h3>posts</h3>
+            <a href="/blog">
+                <p>
+                    more posts <span aria-hidden="true">>></span>
+                </p>
+            </a>
+        </div>
+        <div class="section">
+            <h3>log</h3>
+            {%- for post in collections.log -%}
+                <span>{{ post.content | safe }}</span>
+                <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
+            {%- endfor -%}
+            <a href="/log">
+                <p>
+                    more logs <span aria-hidden="true">>></span>
+                </p>
+            </a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% include "comment.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        {% include "meta.njk" %}
+        {% block head %}
+            <title>{{ title }}</title>
+        {% endblock head %}
+    </head>
+    <body>
+        <div class="viewport">
+            <div class="">
+                {% include "header.njk" %}
+                <main class="main">
+                    <div class="container">
+                        <h1>{{ title }}</h1>
+                        <h5>{{ subscript }}</h5>
+                        {{ content | safe }}
+                    </div>
+                </main>
+            </div>
+            <div class="footer container">
+                <p>footer.</p>
+            </div>
+        </div>
+    </body>
+</html>
