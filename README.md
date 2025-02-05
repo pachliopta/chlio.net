@@ -1,7 +1,20 @@
 [chlio.net](https://chlio.net)
 
-built with [11ty](https://github.com/11ty/eleventy/)
+Built with [11ty](https://github.com/11ty/eleventy/)
 
-most of this repo is licensed under LGPL-3.0, however files within `assets/`,
-such as images, are exempt and are considered [my](https://chlio.net) own,
-unless otherwise specified.
+### Building
+
+```
+pnpm install
+pnpm build
+```
+
+### Serve on localhost
+
+```
+pnpm start
+```
+
+### License
+
+This repo in licensed in a variety of ways, refer to LICENSE.md for details.

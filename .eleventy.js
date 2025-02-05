@@ -48,11 +48,12 @@ export default async function (cfg) {
   cfg.addShortcode("build_time", () => `${Date.now()}`); /* for caching */
   cfg.addShortcode("build_time_pretty", () => {
     return DateTime.now().toFormat("yyyy-LL-dd");
-  }); /* for caching */
+  });
 
   /* Passthrough */
   cfg.addPassthroughCopy("./assets/images/**/*");
   cfg.addPassthroughCopy("./assets/fonts/**/*");
+  cfg.addPassthroughCopy("./assets/buttons/**/*");
   cfg.addPassthroughCopy({ "./assets/favicon/*": "/" });
 
   return {

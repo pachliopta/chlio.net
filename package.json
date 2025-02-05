@@ -9,11 +9,11 @@
     "build": "exec eleventy"
   },
   "engines": {
-    "node": "21.7.3"
+    "node": ">=21.7.3"
   },
   "keywords": [],
-  "author": "",
-  "license": "Apache-2.0",
+  "author": "pachliopta",
+  "license": "AGPL-3.0-only",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "nunjucks": "^3.2.4"
