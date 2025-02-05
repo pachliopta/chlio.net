@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "exec eleventy --serve --incremental",
-    "build": "exec eleventy"
+    "build": "exec eleventy",
+    "new": "node ./scripts/new.js"
   },
   "engines": {
     "node": "21.7.3",

@@ -1,7 +1,7 @@
 ---
 title: chlio's website
 eleventyImport:
-    collections: ["status"]
+    collections: ["_status", "_post"]
 ---
 
 {% extends "default.njk" %}
@@ -11,6 +11,12 @@ eleventyImport:
         <p>Welcome to chlio.net</p>
         <div class="section">
             <h3>posts</h3>
+            {% set postlist = collections._post | head(-3) %}
+            {%- for post in postlist | reverse -%}
+                <a href={{ post.url | urlize }}>
+                    <p>{{ post.data.title }}</p>
+                    <span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
+            {%- endfor -%}
             <a href="/blog">
                 <p>
                     more posts <span aria-hidden="true">>></span>
@@ -19,7 +25,8 @@ eleventyImport:
         </div>
         <div class="section">
             <h3>status</h3>
-            {%- for post in collections.status -%}
+            {% set postlist = collections._status | head(-3) %}
+            {%- for post in postlist | reverse -%}
                 <span>{{ post.content | safe }}</span>
                 <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
             {%- endfor -%}

@@ -15,6 +15,12 @@ pnpm build
 pnpm start
 ```
 
+### Create a new post
+
+```
+pnpm new { blog | status } [ title ]
+````
+
 ### License
 
-This repo in licensed in a variety of ways, refer to LICENSE.md for details.
+This repo is licensed in a variety of ways, refer to LICENSE.md for details.

@@ -1,17 +1,28 @@
 ---
 title: status
-permalink: /status/index.html
+permalink: /status/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+pagination:
+    data: collections._status
+    size: 20
+    generatePageOnEmptyData: true
 eleventyImport:
-    collections: ["status"]
+    collections: ["_status"]
 ---
 
 {% extends "default.njk" %}
 {% block content %}
     <div class="container">
         <h3>log</h3>
-        {%- for post in collections.status -%}
-            <span>{{ post.content | safe }}</span>
-            <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
-        {%- endfor -%}
+        {%- for item in pagination.items %}
+            <span>{{ item.content | safe }}</span>
+            <a href={{ item.url | urlize }}><span class="color-secondary subscript">{{ item.data.date | htmlDateString }}</span></a>
+        {% endfor %}
+        <p>
+            {% if pagination.pageNumber != 0 %}<a href={{ pagination.href.previous }}> <== </a>{% endif %}
+            page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}
+            {% if (pagination.pageNumber + 1) < (pagination.pages | length) %}
+                <a href={{ pagination.href.next }}> ==> </a>
+            {% endif %}
+        </p>
     </div>
 {% endblock content %}

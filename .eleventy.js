@@ -43,6 +43,16 @@ export default async function (cfg) {
   cfg.addFilter("htmlDateString", (date) => {
     return DateTime.fromJSDate(date, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
+  cfg.addFilter("head", (array, n) => {
+    if (!Array.isArray(array) || array.length === 0) {
+      return [];
+    }
+    if (n < 0) {
+      return array.slice(n);
+    }
+
+    return array.slice(0, n);
+  });
 
   /* Shortcodes */
   cfg.addShortcode("build_time", () => `${Date.now()}`); /* for caching */

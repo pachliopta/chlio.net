@@ -19,6 +19,10 @@ img {
   image-rendering: pixelated;
 }
 
+hr {
+  color: $secondary;
+}
+
 /* 0 margin */
 body,
 h1,
@@ -171,5 +175,21 @@ a {
 
   &:hover {
     background-image: url("/assets/images/butterfly-flinched.png")
+  }
+}
+
+.blog {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 2rem 0;
+  }
+
+  img {
+    width: 100%;
   }
 }

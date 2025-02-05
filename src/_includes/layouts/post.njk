@@ -13,17 +13,19 @@
         <div class="viewport">
             <div class="">
                 {% include "header.njk" %}
-                <main class="main">
+                <main class="main content">
                     <div class="container">
-                        <h1>{{ title }}</h1>
-                        <h5>{{ subscript }}</h5>
-                        {{ content | safe }}
+                        <a href="{{ page.url }}">
+                            <h1>{{ title }}</h1>
+                        </a>
+                        <h5 class="subscript color-secondary">{{ metadata.author.name }} @ {{ date | htmlDateString }}</h5>
+                        <hr>
+                        <div class="blog">{{ content | safe }}</div>
+                        <div class="separator"></div>
                     </div>
                 </main>
             </div>
-            <div class="footer container">
-                <p>footer.</p>
-            </div>
+            {% include "footer.njk" %}
         </div>
     </body>
 </html>

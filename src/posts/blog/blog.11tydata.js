@@ -1,6 +1,9 @@
 export default {
-	tags: [
-		"posts"
-	],
-	"layout": "layouts/post.njk",
+  layout: "layouts/post.njk",
+  tags: "_post",
+  eleventyComputed: {
+    permalink: function ({ title }) {
+      return `/blog/${this.slugify(title)}/index.html`;
+    },
+  },
 };

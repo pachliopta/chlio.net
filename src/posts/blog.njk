@@ -1,9 +1,25 @@
 ---
 title: blog
-permalink: /blog/index.html
+permalink: /blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+pagination:
+    data: collections._post
+    size: 5
+    generatePageOnEmptyData: true
+eleventyImport:
+    collections: ["_status", "_post"]
 ---
 
 {% extends "default.njk" %}
 {% block content %}
-    <div class="container">there's nothing here for now</div>
+    <div class="container">
+        there's nothing here for now
+        {%- for item in pagination.items %}<h2>{{ item.data.title }}</h2>{% endfor %}
+        <p>
+            {% if pagination.pageNumber != 0 %}<a href={{ pagination.href.previous }}> <== </a>{% endif %}
+            page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}
+            {% if (pagination.pageNumber + 1) < (pagination.pages | length) %}
+                <a href={{ pagination.href.next }}> ==> </a>
+            {% endif %}
+        </p>
+    </div>
 {% endblock content %}

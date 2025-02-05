@@ -1,6 +1,6 @@
 export default {
   layout: "layouts/log.njk",
-  tags: "status",
+  tags: "_status",
   eleventyComputed: {
     permalink: function (data) {
       var date = Math.floor(data.date.getTime() / 1000);
