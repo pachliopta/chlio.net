@@ -19,9 +19,7 @@
                     {% endblock content %}
                 </main>
             </div>
-            <div class="footer container">
-                <span class="color-secondary subscript">site updated @ {% build_time_pretty %}</span>
-            </div>
+            {% include "footer.njk" %}
         </div>
     </body>
 </html>
