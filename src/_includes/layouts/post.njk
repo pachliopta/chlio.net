@@ -21,7 +21,7 @@
                         <h5 class="subscript color-secondary">{{ metadata.author.name }} @ {{ date | htmlDateString }}</h5>
                         <hr>
                         <div class="blog">{{ content | safe }}</div>
-                        <div class="separator"></div>
+                        {% include "separator.njk" %}
                     </div>
                 </main>
             </div>

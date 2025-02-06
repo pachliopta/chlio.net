@@ -6,7 +6,7 @@ permalink: /about/index.html
 {% extends "default.njk" %}
 {% block content %}
     <div class="container">
-        <div class="separator" aria-hidden="true"></div>
+        {% include "separator.njk" %}
         <div class="align-mid">
             <a href="https://chlio.net">
                 <img alt="An 88x31 button for chlio.net"
@@ -15,7 +15,7 @@ permalink: /about/index.html
                      src="/assets/buttons/chlio-88x31.gif" />
             </a>
         </div>
-        <div class="separator"></div>
+        {% include "separator.njk" %}
         <div class="about-repeat"></div>
     </div>
 {% endblock content %}

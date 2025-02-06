@@ -20,7 +20,7 @@ export default async function (cfg) {
       },
     },
     collection: {
-      name: "posts",
+      name: "_post",
       limit: 10,
     },
     metadata: {

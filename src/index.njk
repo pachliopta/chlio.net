@@ -7,10 +7,10 @@ eleventyImport:
 {% extends "default.njk" %}
 {% block content %}
     <div class="container">
-        <div class="separator" aria-hidden="true"></div>
+        {% include "separator.njk" %}
         <p>Welcome to chlio.net</p>
         <div class="section">
-            <h3>posts</h3>
+            <h3>latest posts</h3>
             {% set postlist = collections._post | head(-3) %}
             {%- for post in postlist | reverse -%}
                 <a href={{ post.url | urlize }}>
@@ -24,16 +24,16 @@ eleventyImport:
             </a>
         </div>
         <div class="section">
-            <h3>status</h3>
-            {% set postlist = collections._status | head(-3) %}
+            <h3>latest status</h3>
+            {% set postlist = collections._status | head(-1) %}
             {%- for post in postlist | reverse -%}
-                <span>{{ post.content | safe }}</span>
-                <a href={{ post.url | urlize }}><span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
+                {% set statusContent = post.content %}
+                {% set statusDate = post.data.date %}
+                {% set statusUrl = post.url %}
+                {% include "status-card.njk" %}
             {%- endfor -%}
-            <a href="/status">
-                <p>
-                    more statuses <span aria-hidden="true">>></span>
-                </p>
+            <a class="padding-top" href="/status">
+                <span> more statuses <span aria-hidden="true">>></span></span>
             </a>
         </div>
     </div>

@@ -89,10 +89,12 @@ a {
 }
 
 .content {
-  padding: 4vh 4vw;
+  padding: 0 4vw;
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
   padding: 1rem 0;
 }
 
@@ -109,11 +111,16 @@ a {
   text-align: center;
 }
 
+.padding-top {
+  margin-top: 1rem;
+}
+
 /* misc */
 .header {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5vh;
 
   img {
     margin: 0 auto;
@@ -223,7 +230,21 @@ a {
   }
 }
 
+.formatted {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 1rem 0;
+  }
+
+}
+
 .status-card {
+  margin-top: 2vh;
   border: 2px solid;
   border-radius: 5px;
   padding: 1rem;

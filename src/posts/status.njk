@@ -13,9 +13,9 @@ eleventyImport:
 {% block content %}
     <div class="container">
         <h3>status log</h3>
-        <p>it's a microblog for micro thoughts</p>
+        <p>a microblog for micro thoughts</p>
         <hr />
-        {%- for item in pagination.items %}
+        {%- for item in pagination.items | reverse %}
             {% set statusContent = item.content %}
             {% set statusDate = item.data.date %}
             {% set statusUrl = item.url %}
