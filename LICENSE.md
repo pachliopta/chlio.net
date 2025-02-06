@@ -1,15 +1,16 @@
-# Articles & Assets
+# Content, Articles & Assets
 
 Unless otherwise specified, all files within the `src/posts` and `assets/`
 directories are released under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-For articles, the requirement may be met when:
+If rehosting an article (blog post), the attribution requirement will be met by
+linking to the license and link to the original material. This may look like:
 
-1. The canonical link is directed towards the original article, e.g.
+1. Displaying the following message somewhere above and below the article:
+   `This was originally published on <a href="https://chlio.net/">chlio.net</a>.`
+2. Directing the cannonical link towards the original article, e.g.
    `<link rel="canonical" href="https://chlio.net/post" />`
-2. The following message is displayed above and below the article:
-   `This article was originally published on <a href="https://chlio.net/">chlio.net</a>.`
 
 ## Fonts (`assets/fonts`)
 

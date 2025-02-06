@@ -4,10 +4,35 @@ import { DateTime } from "luxon";
 import browserslist from "browserslist";
 import path from "path";
 import * as sass from "sass";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 export default async function (cfg) {
   /* Plugins */
   cfg.addPlugin(EleventyHtmlBasePlugin);
+  cfg.addPlugin(feedPlugin, {
+    type: "atom", // or "rss", "json"
+    outputPath: "/feed.xml",
+    stylesheet: "pretty-atom-feed.xsl",
+    templateData: {
+      eleventyNavigation: {
+        key: "Feed",
+        order: 4,
+      },
+    },
+    collection: {
+      name: "posts",
+      limit: 10,
+    },
+    metadata: {
+      language: "en",
+      title: "chlio's blog",
+      subtitle: "chlio's place to talk about something",
+      base: "https://chlio.net/blog",
+      author: {
+        name: "chlio",
+      },
+    },
+  });
 
   /* sass & lightningcss */
   cfg.addExtension("scss", {
@@ -70,6 +95,9 @@ export default async function (cfg) {
   cfg.addPassthroughCopy("./assets/fonts/**/*");
   cfg.addPassthroughCopy("./assets/buttons/**/*");
   cfg.addPassthroughCopy({ "./assets/favicon/*": "/" });
+  cfg.addPassthroughCopy({
+    "./src/feed/pretty-atom-feed.xsl": "/pretty-atom-feed.xsl",
+  });
 
   return {
     passthroughFileCopy: true,

@@ -12,7 +12,10 @@ eleventyImport:
 {% extends "default.njk" %}
 {% block content %}
     <div class="container">
-        there's nothing here for now
+        <h3>blog</h3>
+        <p>there's nothing here for now</p>
+        <a href="/feed.xml">rss</a>
+        <hr />
         {%- for item in pagination.items %}<h2>{{ item.data.title }}</h2>{% endfor %}
         <p>
             {% if pagination.pageNumber != 0 %}<a href={{ pagination.href.previous }}> <== </a>{% endif %}
