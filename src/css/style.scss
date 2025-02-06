@@ -121,6 +121,15 @@ a {
       background-image: url("/assets/images/butterfly-flinched.png")
     }
 
+    &::after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      z-index: -1;
+      content: url("/assets/images/butterfly-flinched.png");
+    }
+
     @media (max-width: 720px) {
       width: 100%;
       height: unset;
