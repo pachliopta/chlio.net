@@ -1,16 +1,32 @@
 $primary: #F0BBC2;
-$secondary: #87717d;
+$secondary: #8D7281;
+
+@font-face {
+  font-family: courier-new-ff;
+  src: local(Courier New);
+  size-adjust: 90%;
+  descent-override: 50%;
+}
+
+@font-face {
+  font-family: monospace;
+  src: local(monospace);
+  size-adjust: 90%;
+  descent-override: 50%;
+}
 
 @font-face {
   font-family: 'monogram';
-  src: url('/assets/fonts/monogram.ttf') format('truetype');
+  src: url('/assets/fonts/monogram.woff2') format('woff2');
   font-style: normal;
-  font-display: block;
+  font-display: swap;
+  size-adjust: 110%;
+  line-gap-override: 0%;
 }
 
 body {
   font-size: 2rem;
-  font-family: monogram;
+  font-family: monogram, courier-new-ff, monospace;
   background-color: #090A12;
   color: $primary;
 }
@@ -43,15 +59,19 @@ ul {
 
 /* text sizes */
 h1 {
-  font-size: 3.5rem;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.8rem;
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 a {
-  text-decoration: underline solid $secondary;
+  text-decoration: underline solid $secondary 2px;
   color: $primary;
 }
 
@@ -82,7 +102,7 @@ a {
 }
 
 .subscript {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .align-mid {
