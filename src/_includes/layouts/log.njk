@@ -19,9 +19,7 @@
                         {% set statusContent %}
                             {{ content | safe }}
                         {% endset %}
-                        {% set statusDate %}
-                            {{ date }}
-                        {% endset %}
+                        {% set statusDate = date %}
                         {% set statusUrl %}
                             {{ page.url }}
                         {% endset %}

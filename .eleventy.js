@@ -43,6 +43,11 @@ export default async function (cfg) {
   cfg.addFilter("htmlDateString", (date) => {
     return DateTime.fromJSDate(date, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
+  cfg.addFilter("postDate", (date) => {
+    return DateTime.fromJSDate(date, { zone: "utc" }).toFormat(
+      "yyyy-LL-dd @ TTT",
+    );
+  });
   cfg.addFilter("head", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
       return [];

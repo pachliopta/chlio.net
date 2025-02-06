@@ -19,13 +19,13 @@ $secondary: #8D7281;
   font-family: 'monogram';
   src: url('/assets/fonts/monogram.woff2') format('woff2');
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   size-adjust: 110%;
   line-gap-override: 0%;
 }
 
 body {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-family: monogram, courier-new-ff, monospace;
   background-color: #090A12;
   color: $primary;
@@ -67,7 +67,7 @@ h3 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 a {
@@ -102,7 +102,7 @@ a {
 }
 
 .subscript {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 .align-mid {
