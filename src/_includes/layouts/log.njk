@@ -1,5 +1,5 @@
-{% include "comment.njk" %}
 <!DOCTYPE html>
+{% include "comment.njk" %}
 <html lang="en">
     <head>
         <meta name="keywords" content="" />
@@ -16,10 +16,16 @@
                 {% include "header.njk" %}
                 <main class="main">
                     <div class="container logentry">
-                        {{ content | safe }}
-                        <div>
-                            <span class="subscript color-secondary">{{ date }}</span>
-                        </div>
+                        {% set statusContent %}
+                            {{ content | safe }}
+                        {% endset %}
+                        {% set statusDate %}
+                            {{ date }}
+                        {% endset %}
+                        {% set statusUrl %}
+                            {{ page.url }}
+                        {% endset %}
+                        {% include "status-card.njk" %}
                     </div>
                 </main>
             </div>

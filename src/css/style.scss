@@ -51,7 +51,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline solid $secondary;
   color: $primary;
 }
 
@@ -159,7 +159,7 @@ a {
 }
 
 .separator::before {
-  content: "\2726"
+  content: "\2726" / "";
 }
 
 .logentry {
@@ -192,4 +192,10 @@ a {
   img {
     width: 100%;
   }
+}
+
+.status-card {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 1rem;
 }

@@ -1,0 +1,5 @@
+<div class="status-card">
+    <h4>{{ metadata.author.name }}</h4>
+    <p>{{ statusContent | safe }}</p>
+    <a href={{ statusUrl | urlize }}><span class="color-secondary subscript">{{ statusDate }}</span></a>
+</div>
