@@ -17,16 +17,16 @@ $secondary: #8D7281;
 
 @font-face {
   font-family: 'monogram';
-  src: url('/assets/fonts/monogram.woff2') format('woff2');
+  src: url('/assets/fonts/nicoclean.woff2') format('woff2');
   font-style: normal;
   font-display: block;
-  size-adjust: 110%;
-  line-gap-override: 0%;
+  size-adjust: 85%;
+  line-gap-override: 25%;
 }
 
 body {
-  font-size: 1.25rem;
-  font-family: monogram, courier-new-ff, monospace;
+  font-size: 1rem;
+  font-family:  monogram, arial, monospace;
   background-color: #090A12;
   color: $primary;
 }
@@ -63,11 +63,11 @@ h1 {
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 a {
@@ -180,9 +180,17 @@ a {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  a {
+    margin-top: 1em;
+    padding-bottom: 1em;
+  }
+
   a,
   p {
-    margin: 0;
+    font-size: 1.2rem;
+    margin:0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 
 
