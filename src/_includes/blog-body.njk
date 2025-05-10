@@ -1,0 +1,10 @@
+<article class="container">
+                        <a href="{{ page.url }}">
+                            <h1>{{ title }}</h1>
+                        </a>
+                        <h5 class="subscript color-secondary">{{ metadata.author.name }} @ {{ date | htmlDateString }}</h5>
+                        <hr>
+                        <img class="blog-hero" src={{thumbnail}} alt="{{thumbnail_alt}}" title="{{thumbnail_alt}}">
+                        <div class="blog">{{ content | safe }}</div>
+                        {% include "separator.njk" %}
+</article>

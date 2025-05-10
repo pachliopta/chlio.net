@@ -3,7 +3,16 @@
 <html lang="en">
     <head>
         <meta name="keywords" content="" />
-        <meta name="description" content="" />
+        <meta name="title" content="{{title}}" />
+        <meta name="description" content="{{description}}" />
+        <!--Open Graph-->
+        <meta property="og:site_name" content="chlio.net">
+        <meta property="og:title" content="{{title}}">
+        <meta property="og:description" content="{{description}}">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="{{thumbnail}}">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="canonical" href={{page.url}}>
         {% include "meta.njk" %}
         {% block head %}
             <title>{{ title }}</title>
@@ -14,15 +23,7 @@
             <div class="">
                 {% include "header.njk" %}
                 <main class="main content">
-                    <div class="container">
-                        <a href="{{ page.url }}">
-                            <h1>{{ title }}</h1>
-                        </a>
-                        <h5 class="subscript color-secondary">{{ metadata.author.name }} @ {{ date | htmlDateString }}</h5>
-                        <hr>
-                        <div class="blog">{{ content | safe }}</div>
-                        {% include "separator.njk" %}
-                    </div>
+                  {% include "blog-body.njk" %}
                 </main>
             </div>
             {% include "footer.njk" %}

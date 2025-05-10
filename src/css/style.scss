@@ -35,6 +35,12 @@ img {
   image-rendering: pixelated;
 }
 
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 hr {
   color: $secondary;
 }
@@ -59,7 +65,7 @@ ul {
 
 /* text sizes */
 h1 {
-  font-size: 1.75rem;
+  font-size: 4rem;
 }
 
 h3 {
@@ -236,6 +242,11 @@ a {
   img {
     width: 100%;
   }
+
+}
+
+.blog-hero {
+   width: 100%;
 }
 
 .formatted {

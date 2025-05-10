@@ -13,10 +13,14 @@ eleventyImport:
 {% block content %}
     <div class="container">
         <h3>blog</h3>
-        <p>there's nothing here for now</p>
         <a href="/feed.xml">rss</a>
         <hr />
-        {%- for item in pagination.items %}<h2>{{ item.data.title }}</h2>{% endfor %}
+        {%- for item in pagination.items %}
+          <a href="{{item.url}}"> <h2>{{ item.data.title }}</h2> </a>
+          <p> {{item.data.description}} </p> 
+          <span class="color-secondary subscript"> {{ item.data.date | htmlDateString }} </span>
+        {% endfor %}
+        {% include "separator.njk" %}
         <p>
             {% if pagination.pageNumber != 0 %}<a href={{ pagination.href.previous }}> <== </a>{% endif %}
             page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}

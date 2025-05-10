@@ -14,8 +14,8 @@ eleventyImport:
             {% set postlist = collections._post | head(-3) %}
             {%- for post in postlist | reverse -%}
                 <a href={{ post.url | urlize }}>
-                    <p>{{ post.data.title }}</p>
-                    <span class="color-secondary subscript">{{ post.data.date | htmlDateString }}</span></a>
+                    <span class=""> <b>{{ post.data.title }}</b> - <span class="color-secondary subscript"> {{ post.data.date | htmlDateString }} </span> </span>
+                </a>
             {%- endfor -%}
             <a href="/blog">
                 <p>
