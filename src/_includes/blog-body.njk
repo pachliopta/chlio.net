@@ -1,5 +1,5 @@
-<article class="container">
-                        <a href="{{ page.url }}">
+<article class="container main content">
+                        <a href="{{ permalink | stripIndex }}">
                             <h1>{{ title }}</h1>
                         </a>
                         <h5 class="subscript color-secondary">{{ metadata.author.name }} @ {{ date | htmlDateString }}</h5>

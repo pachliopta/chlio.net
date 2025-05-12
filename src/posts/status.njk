@@ -1,5 +1,6 @@
 ---
 title: status
+description: "chlio's smaller blog"
 permalink: /status/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 pagination:
     data: collections._status
@@ -16,10 +17,10 @@ eleventyImport:
         <p>a microblog for micro thoughts</p>
         <hr />
         {%- for item in pagination.items | reverse %}
-            {% set statusContent = item.content %}
-            {% set statusDate = item.data.date %}
-            {% set statusUrl = item.url %}
-            {% include "status-card.njk" %}
+            {% set c = item.data | concat({content: item.content, url: item.url}) %}
+            {% renderTemplate "njk", c %}
+              {% include "status-card.njk" %}
+            {% endrenderTemplate  %}
         {% endfor %}
         {% include "separator.njk" %}
         <p>

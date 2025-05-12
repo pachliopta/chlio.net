@@ -1,5 +1,6 @@
 ---
 title: blog
+description: "chlio's blog"
 permalink: /blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 pagination:
     data: collections._post
@@ -16,11 +17,14 @@ eleventyImport:
         <a href="/feed.xml">rss</a>
         <hr />
         {%- for item in pagination.items %}
-          <a href="{{item.url}}"> <h2>{{ item.data.title }}</h2> </a>
-          <p> {{item.data.description}} </p> 
-          <span class="color-secondary subscript"> {{ item.data.date | htmlDateString }} </span>
+          {% set c = item.data | concat({content: item.content}) %}
+          <div class="nested-blog">
+          {% renderTemplate "njk", c %}
+            {% include "blog-body.njk" %}
+          {% endrenderTemplate  %}
+          </div>
         {% endfor %}
-        {% include "separator.njk" %}
+        <hr>
         <p>
             {% if pagination.pageNumber != 0 %}<a href={{ pagination.href.previous }}> <== </a>{% endif %}
             page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}

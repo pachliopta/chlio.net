@@ -16,13 +16,7 @@
                 {% include "header.njk" %}
                 <main class="main">
                     <div class="container logentry">
-                        {% set statusContent %}
-                            {{ content | safe }}
-                        {% endset %}
-                        {% set statusDate = date %}
-                        {% set statusUrl %}
-                            {{ page.url }}
-                        {% endset %}
+                        {% set url = page.url %}
                         {% include "status-card.njk" %}
                     </div>
                 </main>

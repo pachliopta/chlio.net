@@ -1,5 +1,6 @@
 ---
 title: chlio's website
+description: "chlio's place to talk about game development and butterflies"
 eleventyImport:
     collections: ["_status", "_post"]
 ---
@@ -26,11 +27,11 @@ eleventyImport:
         <div class="section">
             <h3>latest status</h3>
             {% set postlist = collections._status | head(-1) %}
-            {%- for post in postlist | reverse -%}
-                {% set statusContent = post.content %}
-                {% set statusDate = post.data.date %}
-                {% set statusUrl = post.url %}
+            {%- for item in postlist | reverse -%}
+              {% set c = item.data | concat({content: item.content, url: item.url}) %}
+              {% renderTemplate "njk", c %}
                 {% include "status-card.njk" %}
+              {% endrenderTemplate  %}
             {%- endfor -%}
             <a class="padding-top" href="/status">
                 <span> more statuses <span aria-hidden="true">>></span></span>

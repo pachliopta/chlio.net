@@ -3,6 +3,6 @@
         <span>{{ metadata.author.name }}</span>
         <span class="subscript color-secondary">@chlio.net</span>
     </div>
-    <p>{{ statusContent | safe }}</p>
-    <a href={{ statusUrl | urlize }}><span class="color-secondary subscript">{{ statusDate | postDate }}</span></a>
+    <p>{{ content | safe }}</p>
+    <a href={{ url | urlize }}><span class="color-secondary subscript">{{ date | postDate }}</span></a>
 </article>

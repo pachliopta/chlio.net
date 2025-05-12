@@ -5,9 +5,11 @@ import browserslist from "browserslist";
 import path from "path";
 import * as sass from "sass";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import { RenderPlugin } from "@11ty/eleventy";
 
 export default async function (cfg) {
   /* Plugins */
+  cfg.addPlugin(RenderPlugin);
   cfg.addPlugin(EleventyHtmlBasePlugin);
   cfg.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
@@ -82,6 +84,15 @@ export default async function (cfg) {
     }
 
     return array.slice(0, n);
+  });
+  cfg.addFilter("concat", (a, b) => {
+    return {
+      ...a,
+      ...b
+    }
+  });
+  cfg.addFilter("stripIndex", (a) => {
+    return a.split("/index.html")[0]
   });
 
   /* Shortcodes */
